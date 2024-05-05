@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.write.WriteFragment">
+
+    <TextView
+        android:id="@+id/write"
+        android:layout_width="match_parent"
+        android:layout_height="91dp"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="431dp"
+        android:gravity="center"
+        android:text="Aquí puedes escribir en una tarjeta NFC"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/write_nfc_button"
+        android:layout_width="376dp"
+        android:layout_height="89dp"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="124dp"
+        android:text="ESCRIBIR EN TARJETA NFC"
+        android:textAllCaps="false"
+        android:textStyle="bold"/>
+
+
+</RelativeLayout>

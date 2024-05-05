@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">NFC Play!</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="select">Select</string>
+    <string name="activar_nfc">Activar NFC</string>
+    <string name="historial">Historial</string>
+    <string name="nfc">NFC</string>
+    <string name="juegos">Juegos</string>
+    <string name="juegos_nfc">Juegos NFC</string>
+    <string name="leer_nfc">Leer NFC</string>
+    <string name="escribir_nfc">Escribir NFC</string>
+    <string name="otros">Otros</string>
+    <string name="leer_nfc_btn">Leer NFC</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button_text">Login</string>
+    <string name="todo">TODO</string>
+    <string name="game_title">Game Title</string>
+    <string name="players_1_10">Players: 1-10</string>
+    <string name="ingresa_texto">ingresa_texto</string>
+    <string name="escribir_etiqueta">escribir_etiquta</string>
+    <string name="escribir_app">Escribir App</string>
+    <string name="escribir_texto">Escribir Texto</string>
+    <string name="escribir_url">Escribir URL</string>
+    <string name="introduce_el_texto">Introduce el texto</string>
+    <string name="introduce_una_url">Introduce una URL</string>
+</resources>

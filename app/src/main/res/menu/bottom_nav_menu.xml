@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_games"
+        android:icon="@drawable/ic_games_black"
+        android:title="@string/juegos_nfc" />
+
+    <item
+        android:id="@+id/navigation_read"
+        android:icon="@drawable/ic_read_black_24dp"
+        android:title="@string/leer_nfc" />
+
+    <item
+        android:id="@+id/navigation_write"
+        android:icon="@drawable/ic_write_black_24dp"
+        android:title="@string/escribir_nfc" />
+
+
+    <item
+        android:id="@+id/navigation_otros"
+        android:icon="@drawable/ic_otros_black_24dp"
+        android:title="@string/otros" />
+
+</menu>

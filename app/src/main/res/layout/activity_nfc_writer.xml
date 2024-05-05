@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/introduce_el_texto">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextText"
+            android:layout_width="match_parent"
+            android:layout_height="191dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnWriteText"
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:text="@string/escribir_texto" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editUrl"
+            android:layout_width="match_parent"
+            android:layout_height="178dp"
+            android:hint="@string/introduce_una_url"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnWriteUrl"
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+
+        android:text="@string/escribir_url" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "358244834515",
+    "project_id": "nfc-play",
+    "storage_bucket": "nfc-play.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:358244834515:android:f707032148f0ade688c826",
+        "android_client_info": {
+          "package_name": "com.alfonso.nfcplay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "358244834515-fh9nt3nta2l1ta2nvq56rs1hd4mm1u94.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDubK2IfKcYs7xeYDwHEvs24aoEfWsXS4o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "358244834515-fh9nt3nta2l1ta2nvq56rs1hd4mm1u94.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

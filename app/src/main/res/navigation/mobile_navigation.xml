@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_games">
+
+    <fragment
+        android:id="@+id/navigation_games"
+        android:name="com.alfonso.nfcplay.ui.games.GameFragment"
+        android:label="Juegos NFC"
+        tools:layout="@layout/fragment_games" />
+
+    <fragment
+        android:id="@+id/navigation_read"
+        android:name="com.alfonso.nfcplay.ui.read.ReadFragment"
+        android:label="Leer NFC"
+        tools:layout="@layout/fragment_write" />
+
+    <fragment
+        android:id="@+id/navigation_write"
+        android:name="com.alfonso.nfcplay.ui.write.WriteFragment"
+        android:label="Escribir NFC"
+        tools:layout="@layout/fragment_read" />
+
+    <fragment
+        android:id="@+id/navigation_otros"
+        android:name="com.alfonso.nfcplay.ui.select.OtroFragment"
+        android:label="Otros"
+        tools:layout="@layout/fragment_otros" />
+</navigation>
