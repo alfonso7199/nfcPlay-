@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".servicios.RegisterActivity">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -27,6 +28,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/lastNameContainer"
+        app:boxCornerRadiusTopEnd="26dp"
+        app:boxCornerRadiusTopStart="26dp"
+        app:boxCornerRadiusBottomStart="26dp"
+        app:boxCornerRadiusBottomEnd="26dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp">
@@ -42,6 +47,10 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordContainer"
+        app:boxCornerRadiusTopEnd="26dp"
+        app:boxCornerRadiusTopStart="26dp"
+        app:boxCornerRadiusBottomStart="26dp"
+        app:boxCornerRadiusBottomEnd="26dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/emailContainer"
@@ -63,6 +72,7 @@
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:cornerRadius="16dp"
         android:layout_below="@id/passwordContainer"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
