@@ -26,4 +26,11 @@
     <string name="escribir_url">Escribir URL</string>
     <string name="introduce_el_texto">Introduce el texto</string>
     <string name="introduce_una_url">Introduce una URL</string>
+    <string name="pulse_el_bot_n_para_escanear_una_o_m_s_tarjetas_nfc">Pulse el botón para escanear una o más tarjetas NFC</string>
+    <string name="leer_tarjetas_nfc">LEER TARJETAS NFC</string>
+    <string name="aqu_puedes_escribir_en_una_tarjeta_nfc">Aquí puedes escribir en una tarjeta NFC</string>
+    <string name="escribir_en_tarjeta_nfc">ESCRIBIR EN TARJETA NFC</string>
+    <string name="nfc_play">NFC Play!</string>
+    <string name="no_tienes_cuenta">¿No tienes cuenta?</string>
+    <string name="reg_strate_aqu">Regístrate aquí</string>
 </resources>

@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_logout"
+        android:title="Cerrar sesión"
+        app:showAsAction="always"
+
+        />
+
+    <item android:title="Juegos" />
+    <item android:title="Leer NFC" />
+    <item android:title="Escribir NFC" />
+    <item android:title="Otros" />
+</menu>
