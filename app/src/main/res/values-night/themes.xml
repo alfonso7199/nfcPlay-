@@ -12,5 +12,6 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/cardview_shadow_end_color</item>
         <!-- Customize your theme here. -->
+        <item name="fontFamily">@font/silkscreen_regular</item>
     </style>
 </resources>

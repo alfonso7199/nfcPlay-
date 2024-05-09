@@ -8,8 +8,11 @@
 
         />
 
-    <item android:title="Juegos" />
-    <item android:title="Leer NFC" />
-    <item android:title="Escribir NFC" />
-    <item android:title="Otros" />
+    <item android:id="@+id/action_ajustes"
+        android:title="Ajustes"
+         />
+
+    <item android:id="@+id/action_about_nfcplay"
+        android:title="Sobre NFC Play"
+         />
 </menu>

@@ -33,4 +33,6 @@
     <string name="nfc_play">NFC Play!</string>
     <string name="no_tienes_cuenta">¿No tienes cuenta?</string>
     <string name="reg_strate_aqu">Regístrate aquí</string>
+    <string name="sobre_nfc_play">Sobre NFC Play</string>
+    <string name="ajustes">Ajustes</string>
 </resources>

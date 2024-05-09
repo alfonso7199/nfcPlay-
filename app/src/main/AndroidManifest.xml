@@ -56,6 +56,15 @@
             android:name=".ui.write.NFCWriter"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".servicios.AjustesActivity"
+            android:exported="true"
+            android:label="Ajustes "/>
+        <activity
+            android:name=".servicios.AboutNfcPlayActivity"
+            android:exported="true"
+            android:label="Sobre NFC Play!"/>
+
 
     </application>
 

@@ -15,6 +15,9 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import com.alfonso.nfcplay.servicios.AjustesActivity;
+import com.alfonso.nfcplay.servicios.AboutNfcPlayActivity;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -77,21 +80,15 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish(); // Cierra la actividad actual para que no se pueda volver atrás
             return true;
-        } else if (id == R.id.navigation_games) {
-            // Acción para ir al fragmento de juegos
-            navController.navigate(R.id.navigation_games);
+        } else if (id == R.id.action_ajustes) {
+            // Acción para abrir la actividad de ajustes
+            Intent intent = new Intent(this, AjustesActivity.class);
+            startActivity(intent);
             return true;
-        } else if (id == R.id.navigation_read) {
-            // Acción para ir al fragmento de leer NFC
-            navController.navigate(R.id.navigation_read);
-            return true;
-        } else if (id == R.id.navigation_write) {
-            // Acción para ir al fragmento de escribir NFC
-            navController.navigate(R.id.navigation_write);
-            return true;
-        } else if (id == R.id.navigation_otros) {
-            // Acción para ir al fragmento de otros
-            navController.navigate(R.id.navigation_otros);
+        } else if (id == R.id.action_about_nfcplay) {
+            // Acción para abrir la actividad de información sobre NFC Play
+            Intent intent = new Intent(this, AboutNfcPlayActivity.class);
+            startActivity(intent);
             return true;
         }
 

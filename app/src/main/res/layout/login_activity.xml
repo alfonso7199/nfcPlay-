@@ -17,15 +17,15 @@
 
         <ImageView
             android:id="@+id/app_icon"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="173dp"
+            android:layout_height="167dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="32dp"
-            app:srcCompat="@drawable/ic_games_black" />
+            app:srcCompat="@drawable/nfcplay" />
 
         <TextView
-            android:layout_width="205dp"
-            android:layout_height="74dp"
+            android:layout_width="266dp"
+            android:layout_height="78dp"
             android:layout_marginBottom="16dp"
             android:gravity="center"
             android:text="@string/nfc_play"
