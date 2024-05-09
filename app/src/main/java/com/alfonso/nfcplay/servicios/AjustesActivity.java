@@ -12,12 +12,13 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import com.alfonso.nfcplay.R;
 
 public class AjustesActivity extends AppCompatActivity {
 
-    private Switch switchNFC;
+    private SwitchCompat switchNFC;
     private NfcAdapter nfcAdapter;
 
     @Override
@@ -25,7 +26,7 @@ public class AjustesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajustes);
 
-        Switch switchTema = findViewById(R.id.switch_tema);
+        SwitchCompat switchTema = findViewById(R.id.switch_tema);
         switchNFC = findViewById(R.id.switch_nfc);
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
 

@@ -6,13 +6,14 @@
     android:layout_height="match_parent">
 
 
-    <Switch
+    <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switch_tema"
         android:layout_width="match_parent"
         android:layout_height="82dp"
         android:layout_marginTop="132dp"
         android:padding="16dp"
-        android:text="Tema Oscuro"
+        android:text="@string/tema_oscuro"
+        android:fontFamily="@font/silkscreen_regular"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -20,13 +21,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <Switch
+    <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switch_nfc"
         android:layout_width="match_parent"
         android:layout_height="82dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/silkscreen_regular"
         android:padding="16dp"
-        android:text="Activar NFC"
+        android:text="@string/activarnfc_ajustes"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switch_tema" />
@@ -37,7 +39,7 @@
         android:layout_marginTop="8dp"
         android:gravity="center_vertical"
         android:padding="16dp"
-        android:text="Versión de la aplicación:  1.0"
+        android:text="@string/versi_n_de_la_aplicaci_n_1_0"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -45,15 +47,15 @@
         app:layout_constraintTop_toBottomOf="@+id/switch_nfc" />
 
 
-
     <Button
         android:id="@+id/btn_cerrar_sesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
+
+        android:layout_marginStart="116dp"
         android:layout_marginTop="68dp"
         android:padding="16dp"
-        android:text="Cerrar Sesión"
+        android:text="@string/cerrar_sesi_n"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/version_app" />
 
@@ -63,7 +65,7 @@
         android:layout_height="33dp"
         android:layout_marginBottom="116dp"
         android:gravity="center"
-        android:text="NFC Play! 2024 "
+        android:text="@string/nfc_play_2024"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -35,4 +35,9 @@
     <string name="reg_strate_aqu">Regístrate aquí</string>
     <string name="sobre_nfc_play">Sobre NFC Play</string>
     <string name="ajustes">Ajustes</string>
+    <string name="tema_oscuro">Tema Oscuro</string>
+    <string name="activarnfc_ajustes">Activar NFC</string>
+    <string name="versi_n_de_la_aplicaci_n_1_0">Versión de la aplicación: 1.0</string>
+    <string name="cerrar_sesi_n">Cerrar Sesión</string>
+    <string name="nfc_play_2024">NFC Play! 2024</string>
 </resources>

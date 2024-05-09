@@ -19,6 +19,7 @@ import com.alfonso.nfcplay.servicios.AjustesActivity;
 import com.alfonso.nfcplay.servicios.AboutNfcPlayActivity;
 
 
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -39,8 +40,6 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
-
-
     }
 
     @Override

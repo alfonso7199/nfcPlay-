@@ -1,52 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/introduce_el_texto">
+    <TextView
+        android:id="@+id/nfcContents"
+        android:layout_width="384dp"
+        android:layout_height="176dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="Message read from NFC Tag:"
+        android:textSize="20sp" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextText"
-            android:layout_width="match_parent"
-            android:layout_height="191dp" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/btnWriteText"
-        android:layout_width="match_parent"
-        android:layout_height="79dp"
-        android:text="@string/escribir_texto" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutUrl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
->
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editUrl"
-            android:layout_width="match_parent"
-            android:layout_height="178dp"
-            android:hint="@string/introduce_una_url"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
+    <EditText
+        android:id="@+id/editMessage"
+        android:layout_width="371dp"
+        android:layout_height="72dp"
+        android:layout_below="@id/nfcContents"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Enter text to write"
+        android:inputType="text" />
 
     <Button
-        android:id="@+id/btnWriteUrl"
-        android:layout_width="match_parent"
-        android:layout_height="86dp"
-
-        android:text="@string/escribir_url" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutApp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-</LinearLayout>
+        android:id="@+id/button"
+        android:layout_width="278dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/editMessage"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginEnd="67dp"
+        android:gravity="center"
+        android:text="Write to NFC Tag" />
+</RelativeLayout>

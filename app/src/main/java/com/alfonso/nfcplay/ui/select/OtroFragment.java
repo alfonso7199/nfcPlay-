@@ -1,6 +1,6 @@
 package com.alfonso.nfcplay.ui.select;
 
-import android.app.PendingIntent;
+
 import android.content.Intent;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
@@ -16,15 +16,12 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.alfonso.nfcplay.databinding.FragmentOtrosBinding;
-import com.alfonso.nfcplay.ui.read.NFCReader;
-import com.alfonso.nfcplay.ui.write.NFCWriter;
+
 
 public class OtroFragment extends Fragment {
     private FragmentOtrosBinding binding;
     private NfcAdapter nfcAdapter;
-    private PendingIntent pendingIntent;
-    private NFCWriter nfcWriter;
-    private NFCReader nfcReader;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         OtroViewModel otroViewModel = new ViewModelProvider(this).get(OtroViewModel.class);
