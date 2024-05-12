@@ -23,11 +23,12 @@ import com.alfonso.nfcplay.R;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 public class NFCWriter extends AppCompatActivity {
-    private static final String ERROR_DETECTED = "No NFC tag detected!";
-    private static final String WRITE_SUCCESS = "Text written to the NFC tag successfully!";
-    private static final String WRITE_ERROR = "Error during writing, is the NFC tag close enough to your device?";
+    private static final String ERROR_DETECTED = "No se ha detectado Tarjeta NFC!";
+    private static final String WRITE_SUCCESS = "Texto escrito exitosamente en la Tag NFC!";
+    private static final String WRITE_ERROR = "Error durante la escritura, mantén la etiqueta cerca";
 
     private NfcAdapter nfcAdapter;
     private PendingIntent pendingIntent;
@@ -62,13 +63,11 @@ public class NFCWriter extends AppCompatActivity {
 
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
         if (nfcAdapter == null) {
-            // Stop here, we definitely need NFC
-            Toast.makeText(this, "This device doesn't support NFC.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Este dispositivo no soporta NFC", Toast.LENGTH_LONG).show();
             finish();
             return;
         }
 
-        // For when the activity is launched by the intent-filter for android.nfc.action.NDEF_DISCOVERE
         readFromIntent(getIntent());
         pendingIntent = PendingIntent.getActivity(
                 this,
@@ -81,9 +80,6 @@ public class NFCWriter extends AppCompatActivity {
         IntentFilter[] writeTagFilters = new IntentFilter[]{tagDetected};
     }
 
-    /******************************************************************************
-     * Read From NFC Tag
-     *****************************************************************************/
     private void readFromIntent(Intent intent) {
         String action = intent.getAction();
         if (NfcAdapter.ACTION_TAG_DISCOVERED.equals(action)
@@ -106,59 +102,43 @@ public class NFCWriter extends AppCompatActivity {
         if (msgs == null || msgs.length == 0) return;
         String text = "";
         byte[] payload = msgs[0].getRecords()[0].getPayload();
-        Charset textEncoding = ((payload[0] & 128) == 0) ? Charset.forName("UTF-8") : Charset.forName("UTF-16");
+        Charset textEncoding = ((payload[0] & 128) == 0) ? StandardCharsets.UTF_8 : StandardCharsets.UTF_16;
         int languageCodeLength = payload[0] & 0063;
         text = new String(payload, languageCodeLength + 1, payload.length - languageCodeLength - 1, textEncoding);
-        tvNFCContent.setText("Message read from NFC Tag:\n" + text);
+        tvNFCContent.setText("Mensaje leido:\n" + text);
     }
-    /******************************************************************************
-     * Write to NFC Tag
-     *****************************************************************************/
+
     private void write(String text, Tag tag) throws IOException, FormatException {
         try {
             NdefRecord[] records = {createRecord(text)};
             NdefMessage message = new NdefMessage(records);
-            // Get an instance of Ndef for the tag.
             Ndef ndef = Ndef.get(tag);
-            // Enable I/O
             ndef.connect();
-            // Write the message
             ndef.writeNdefMessage(message);
-            // Close the connection
             ndef.close();
         } catch (IOException | FormatException e) {
-            // Manejar IOException y FormatException
             e.printStackTrace();
-            // Mostrar un mensaje de error al usuario
-            Toast.makeText(this, "Error writing to NFC tag", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Error al escribir en la tarjeta NFC", Toast.LENGTH_SHORT).show();
         } catch (SecurityException e) {
-            // Manejar SecurityException
             e.printStackTrace();
-            // Mostrar un mensaje de error al usuario
-            Toast.makeText(this, "SecurityException: Tag is out of date", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "No retires la tarjeta NFC, vuelva a intentarlo", Toast.LENGTH_SHORT).show();
         }
     }
 
     private NdefRecord createRecord(String text) throws UnsupportedEncodingException {
-        String lang = "en";
+        String lang = "";
         byte[] textBytes = text.getBytes();
-        byte[] langBytes = lang.getBytes("US-ASCII");
+        byte[] langBytes = lang.getBytes(StandardCharsets.US_ASCII);
         int langLength = langBytes.length;
         int textLength = textBytes.length;
         byte[] payload = new byte[1 + langLength + textLength];
-
-        // Set status byte (see NDEF spec for actual bits)
         payload[0] = (byte) langLength;
 
-        // Copy langbytes and textbytes into payload
         System.arraycopy(langBytes, 0, payload, 1, langLength);
         System.arraycopy(textBytes, 0, payload, 1 + langLength, textLength);
         return new NdefRecord(NdefRecord.TNF_WELL_KNOWN, NdefRecord.RTD_TEXT, new byte[0], payload);
     }
 
-    /**
-     * For reading the NFC when the app is already launched
-     */
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
@@ -181,16 +161,10 @@ public class NFCWriter extends AppCompatActivity {
         WriteModeOn();
     }
 
-    /******************************************************************************
-     * Enable Write and foreground dispatch to prevent intent-filter to launch the app again
-     *****************************************************************************/
     private void WriteModeOn() {
         nfcAdapter.enableForegroundDispatch(this, pendingIntent, null, null);
     }
 
-    /******************************************************************************
-     * Disable Write and foreground dispatch to allow intent-filter to launch the app
-     *****************************************************************************/
     private void WriteModeOff() {
         nfcAdapter.disableForegroundDispatch(this);
     }

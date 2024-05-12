@@ -56,7 +56,7 @@ public class OtroFragment extends Fragment {
     }
 
     private void enableNfc() {
-        NfcAdapter nfcAdapter = NfcAdapter.getDefaultAdapter(requireActivity()); // Cambiado a requireActivity()
+        NfcAdapter nfcAdapter = NfcAdapter.getDefaultAdapter(requireActivity());
         if (nfcAdapter != null && nfcAdapter.isEnabled()) {
             Toast.makeText(requireActivity(), "NFC habilitado", Toast.LENGTH_SHORT).show();
         } else {

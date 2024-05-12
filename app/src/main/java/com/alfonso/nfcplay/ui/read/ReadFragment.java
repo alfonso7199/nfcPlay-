@@ -33,7 +33,6 @@ public class ReadFragment extends Fragment {
         NfcManager nfcManager = (NfcManager) requireContext().getSystemService(Context.NFC_SERVICE);
         nfcAdapter = nfcManager.getDefaultAdapter();
         if (nfcAdapter != null) {
-            // Check NFC enabled
             if (!nfcAdapter.isEnabled()) {
                 Toast.makeText(requireContext(), "Por favor, activa el NFC para leer tarjetas", Toast.LENGTH_SHORT).show();
             }

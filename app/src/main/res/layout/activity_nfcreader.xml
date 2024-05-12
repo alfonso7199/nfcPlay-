@@ -7,9 +7,10 @@
 
     <TextView
         android:id="@+id/textViewNFC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Acerque la tarjeta NFC"
+        android:layout_width="325dp"
+        android:layout_height="334dp"
         android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="Acerque la tarjeta NFC"
         android:textSize="18sp" />
 </RelativeLayout>

@@ -10,7 +10,7 @@ public class OtroViewModel extends ViewModel {
 
     public OtroViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Acerca una tarjeta NFC para insertarle información");
+        mText.setValue("Pulse el botón para activar o desactivar el NFC");
 
     }
 

@@ -29,7 +29,7 @@ public class NFCReader extends AppCompatActivity {
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
         if (nfcAdapter == null) {
             Toast.makeText(this, "NFC no está disponible en este dispositivo.", Toast.LENGTH_LONG).show();
-            finish(); // cierra la app si el dispositivo no soporta NFC
+            finish();
         }
     }
 
@@ -40,9 +40,9 @@ public class NFCReader extends AppCompatActivity {
         IntentFilter ndef = new IntentFilter(NfcAdapter.ACTION_NDEF_DISCOVERED);
         IntentFilter tag = new IntentFilter(NfcAdapter.ACTION_TAG_DISCOVERED);
         try {
-            ndef.addDataType("*/*"); // Filtra todos los tipos de datos NFC
+            ndef.addDataType("*/*");
         } catch (IntentFilter.MalformedMimeTypeException e) {
-            throw new RuntimeException("Check your mime type.");
+            throw new RuntimeException("Revisa el tipo de datos");
         }
         IntentFilter[] filters = new IntentFilter[] {ndef, tag};
         nfcAdapter.enableForegroundDispatch(this, pendingIntent, filters, null);
@@ -66,11 +66,9 @@ public class NFCReader extends AppCompatActivity {
                     textView.setText(new String(record.getPayload()));
                 }
             } else {
-                // La tarjeta NFC está vacía
                 textView.setText("Atención, esta tarjeta NFC está vacía!");
             }
         } else if (NfcAdapter.ACTION_TAG_DISCOVERED.equals(intent.getAction())) {
-            // La etiqueta está vacía
             textView.setText("Atención, esta tarjeta NFC está vacía!");
         }
     }

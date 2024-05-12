@@ -10,10 +10,7 @@ public class ReadViewModel extends ViewModel {
 
     public ReadViewModel() {
         mText = new MutableLiveData<>();
-
     }
-
-
     public LiveData<String> getText() {
         return mText;
     }
