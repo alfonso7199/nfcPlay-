@@ -28,12 +28,9 @@ public class MainActivity extends AppCompatActivity {
         com.alfonso.nfcplay.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-
         setContentView(binding.getRoot());
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_games, R.id.navigation_read, R.id.navigation_write, R.id.navigation_otros)
                 .build();
@@ -46,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         if (navController.getCurrentDestination() == navController.getGraph().findNode(R.id.navigation_games)) {
-            super.onBackPressed(); // Permite el comportamiento predeterminado de onBackPressed
+            super.onBackPressed();
         } else {
             mostrarCuadroAlertaCerrarApp();
         }
@@ -73,19 +70,15 @@ public class MainActivity extends AppCompatActivity {
 
 
         if (id == R.id.action_logout) {
-            // Acción para cerrar sesión
-            // Por ejemplo, puedes iniciar la actividad de inicio de sesión
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
-            finish(); // Cierra la actividad actual para que no se pueda volver atrás
+            finish();
             return true;
         } else if (id == R.id.action_ajustes) {
-            // Acción para abrir la actividad de ajustes
             Intent intent = new Intent(this, AjustesActivity.class);
             startActivity(intent);
             return true;
         } else if (id == R.id.action_about_nfcplay) {
-            // Acción para abrir la actividad de información sobre NFC Play
             Intent intent = new Intent(this, AboutNfcPlayActivity.class);
             startActivity(intent);
             return true;

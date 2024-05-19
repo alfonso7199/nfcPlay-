@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(
-                R.layout.login_activity); // Set the login layout
+                R.layout.login_activity);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -44,11 +44,9 @@ public class LoginActivity extends AppCompatActivity {
                 mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(LoginActivity.this, task -> {
                             if (task.isSuccessful()) {
-                                // Sign in success, update UI with the signed-in user's information
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 iniciarMainActivity();
                             } else {
-                                // If sign in fails, display a message to the user.
                                 Toast.makeText(LoginActivity.this, "Authentication failed.",
                                         Toast.LENGTH_SHORT).show();
                             }
@@ -58,7 +56,6 @@ public class LoginActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Iniciar la actividad de registro
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
             }
@@ -67,11 +64,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private void iniciarMainActivity() {
-        // Aquí creas un Intent para iniciar la MainActivity
         Intent intent = new Intent(this, MainActivity.class);
-        // Añades las banderas para limpiar el historial de actividades
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        // Inicias la MainActivity
         startActivity(intent);
     }
 }

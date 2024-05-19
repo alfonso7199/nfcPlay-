@@ -30,7 +30,6 @@ public class AjustesActivity extends AppCompatActivity {
         switchNFC = findViewById(R.id.switch_nfc);
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
 
-        // Cargar preferencias guardadas
         SharedPreferences sharedPreferences = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
         switchTema.setChecked(sharedPreferences.getBoolean("modoOscuro", false));
         switchNFC.setChecked(sharedPreferences.getBoolean("nfcActivado", false));
@@ -38,7 +37,6 @@ public class AjustesActivity extends AppCompatActivity {
         Button btnCerrarSesion = findViewById(R.id.btn_cerrar_sesion);
         btnCerrarSesion.setOnClickListener(v -> cerrarSesion());
 
-        // Configurar listener para el switch de tema oscuro
         switchTema.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -54,35 +52,29 @@ public class AjustesActivity extends AppCompatActivity {
                     setTheme(R.style.Theme_NFCPlay);
                 }
 
-                recreate(); // Reiniciar la actividad para aplicar el cambio de tema
+                recreate();
             }
         });
 
-        // Configurar listener para el switch de NFC
         switchNFC.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     // NFC está activado
                     if (nfcAdapter != null && !nfcAdapter.isEnabled()) {
-                        // NFC disponible pero no activado
                         Intent nfcIntent = new Intent(Settings.ACTION_NFC_SETTINGS);
                         startActivity(nfcIntent);
                     } else if (nfcAdapter == null) {
-                        // Dispositivo no compatible con NFC
                         Toast.makeText(AjustesActivity.this, "El dispositivo no es compatible con NFC", Toast.LENGTH_SHORT).show();
                         switchNFC.setChecked(false);
                     }
                 } else {
-                    // NFC está desactivado
                     if (nfcAdapter != null && nfcAdapter.isEnabled()) {
-                        // NFC está activado, desactivarlo
                         Intent nfcIntent = new Intent(Settings.ACTION_NFC_SETTINGS);
                         startActivity(nfcIntent);
                     }
                 }
 
-                // Guardar preferencia
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putBoolean("nfcActivado", isChecked);
                 editor.apply();
@@ -90,17 +82,13 @@ public class AjustesActivity extends AppCompatActivity {
         });
     }
     private void cerrarSesion() {
-        // Eliminar las preferencias guardadas
         SharedPreferences sharedPreferences = getSharedPreferences("preferencias", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.clear();
         editor.apply();
 
-        // Aquí creas un Intent para iniciar la LoginActivity
         Intent intent = new Intent(this, LoginActivity.class);
-        // Añades las banderas para limpiar el historial de actividades
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        // Inicias la LoginActivity
         startActivity(intent);
     }
 }

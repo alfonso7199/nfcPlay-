@@ -32,18 +32,15 @@ public class RegisterActivity extends AppCompatActivity{
                 String email = etEmail.getText().toString();
                 String password = etPassword.getText().toString();
 
-                // Llamar al método de Firebase para crear un nuevo usuario con correo y contraseña
                 mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(RegisterActivity.this, task -> {
                             if (task.isSuccessful()) {
-                                // Registro exitoso, actualizar la interfaz de usuario con la información del usuario registrado
                                 Toast.makeText(RegisterActivity.this, "Registro exitoso",
                                         Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                                 startActivity(intent);
                                 finish();
                             } else {
-                                // Si el registro falla, mostrar un mensaje al usuario.
                                 Toast.makeText(RegisterActivity.this, "Authentication failed.",
                                         Toast.LENGTH_SHORT).show();
                             }
