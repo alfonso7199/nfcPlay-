@@ -34,17 +34,13 @@ public class CustomArrayAdapter extends ArrayAdapter<String> {
         ImageView imageView = rowView.findViewById(R.id.image_game);
 
         titleTextView.setText(gameTitles[position]);
-        // Setear imagen dependiendo del juego, suponiendo que tengas una lista de imágenes de juego
         imageView.setImageResource(getImageResourceForGame(gameTitles[position]));
 
         return rowView;
     }
 
-    // Método para obtener la imagen del juego según el título
     private int getImageResourceForGame(String gameTitle) {
-        // Implementa la lógica para obtener la imagen según el título del juego
-        // Aquí puedes usar un HashMap o una lógica de coincidencia de cadenas para asignar la imagen correcta
-        // Por ahora, retornaré una imagen de ejemplo
+
         return R.drawable.ic_games_black;
     }
 }
