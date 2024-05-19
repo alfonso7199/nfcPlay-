@@ -19,7 +19,7 @@ import com.alfonso.nfcplay.servicios.AjustesActivity;
 import com.alfonso.nfcplay.servicios.AboutNfcPlayActivity;
 
 
-
+//https://www.canva.com/design/DAGFmY1QLnY/YV2n5XgXINCahvGB1vaOqg/edit?utm_content=DAGFmY1QLnY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 public class MainActivity extends AppCompatActivity {
 
     @Override

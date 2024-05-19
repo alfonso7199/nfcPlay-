@@ -11,7 +11,7 @@ import com.alfonso.nfcplay.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity{
-    private EditText etFirstName, etLastName, etEmail, etPassword;
+    private EditText email, password;
     private Button btnRegister;
     private FirebaseAuth mAuth;
 
@@ -22,17 +22,17 @@ public class RegisterActivity extends AppCompatActivity{
 
         mAuth = FirebaseAuth.getInstance();
 
-        etEmail = findViewById(R.id.etEmail);
-        etPassword = findViewById(R.id.etPassword);
+        email = findViewById(R.id.etEmail);
+        password = findViewById(R.id.etPassword);
         btnRegister = findViewById(R.id.btnRegister);
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = etEmail.getText().toString();
-                String password = etPassword.getText().toString();
+                String emailS = email.getText().toString();
+                String passwordS = password.getText().toString();
 
-                mAuth.createUserWithEmailAndPassword(email, password)
+                mAuth.createUserWithEmailAndPassword(emailS, passwordS)
                         .addOnCompleteListener(RegisterActivity.this, task -> {
                             if (task.isSuccessful()) {
                                 Toast.makeText(RegisterActivity.this, "Registro exitoso",
@@ -41,7 +41,7 @@ public class RegisterActivity extends AppCompatActivity{
                                 startActivity(intent);
                                 finish();
                             } else {
-                                Toast.makeText(RegisterActivity.this, "Authentication failed.",
+                                Toast.makeText(RegisterActivity.this, "Fallo de Autenticación.",
                                         Toast.LENGTH_SHORT).show();
                             }
                         });

@@ -15,8 +15,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText usernameField;
-    private EditText passwordField;
+    private EditText usuario;
+    private EditText contraseña;
     private Button loginButton;
     private Button registerButton;
     private FirebaseAuth mAuth;
@@ -29,16 +29,16 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        usernameField = findViewById(R.id.username_field);
-        passwordField = findViewById(R.id.password_field);
+        usuario = findViewById(R.id.username_field);
+        contraseña = findViewById(R.id.password_field);
         loginButton = findViewById(R.id.login_button);
         registerButton = findViewById(R.id.register_button);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = usernameField.getText().toString();
-                String password = passwordField.getText().toString();
+                String email = usuario.getText().toString();
+                String password = contraseña.getText().toString();
 
 
                 mAuth.signInWithEmailAndPassword(email, password)
@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 iniciarMainActivity();
                             } else {
-                                Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                Toast.makeText(LoginActivity.this, "Fallo de autenticación.",
                                         Toast.LENGTH_SHORT).show();
                             }
                         });
