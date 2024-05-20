@@ -46,7 +46,6 @@
         <activity
             android:name=".servicios.RegisterActivity"
             android:exported="true">
-            <!-- Puedes agregar filtros de intención específicos si es necesario -->
         </activity>
         <activity
             android:name=".ui.read.NFCReader"

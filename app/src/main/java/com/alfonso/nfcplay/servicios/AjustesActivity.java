@@ -45,7 +45,6 @@ public class AjustesActivity extends AppCompatActivity {
                 editor.putBoolean("modoOscuro", isChecked);
                 editor.apply();
 
-                // Cambiar el tema de la aplicación
                 if (isChecked) {
                     setTheme(R.style.Theme_NFCPlay);
                 } else {
